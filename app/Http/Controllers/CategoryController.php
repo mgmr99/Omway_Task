@@ -86,7 +86,7 @@ class CategoryController extends Controller
     public function update(Request $request, string $id)
     {
         // update the category data in the database
-        $id = $request->id;
+        $id = $id;
         $name = $request->name;
 
         // validate the datas
