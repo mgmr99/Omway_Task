@@ -13,11 +13,11 @@ class Category_News extends Model
 
     public function categories()
     {
-        return $this->belongsToMany(Category::class, 'id', 'id');
+        return $this->belongsToMany(Category::class);
     }
 
     public function news()
     {
-        return $this->belongsToMany(News::class, 'id', 'id');
+        return $this->belongsToMany(News::class);
     }
 }
