@@ -5,20 +5,19 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class News extends Model
+class Category_News extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['id','category_id','title','slug','date','description','image','is_publish'];
+    protected $fillable = ['category_id','news_id'];
 
     public function categories()
     {
         return $this->belongsToMany(Category::class, 'id', 'id');
     }
 
-    public function scopeSearch($query, $s)
+    public function news()
     {
-        return $query->where('title', 'like', '%' . $s . '%');
+        return $this->belongsToMany(News::class, 'id', 'id');
     }
-
 }

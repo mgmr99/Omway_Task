@@ -3,9 +3,9 @@
     <div class="container">
         <form action="{{ route('news.search') }}" method="get">
             <div class="form-group">
-                <input type="text" name="search" class="form-control" placeholder="Search">
+                <input type="text" name="search" class="form-control" placeholder="Search News">
             </div>
-            <button type="submit" class="btn btn-primary">Search News</button>
+            <button type="submit" class="btn btn-primary">Search</button>
         </form>
     </div>
     <div class="container">

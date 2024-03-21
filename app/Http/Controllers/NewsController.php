@@ -189,11 +189,10 @@ class NewsController extends Controller
         return redirect()->route('news.index');
     }
 
-    //search news
     public function search(Request $request)
     {
-        $search = $request->get('search');
-        $news = News::where('title', 'like', '%' . $search . '%')->get();
-        return view('news.index', compact('news'));
+        $s = $request->input('search');
+        $news = News::search($s)->get();
+        return redirect()->route('news.index', compact('news'));
     }
 }
